@@ -3,17 +3,16 @@
 После этого у вас на сайте появится доступный для установки модуль - https://вашсайт.ru/bitrix/admin/partner_modules.php?lang=ru
 Установите его. После установки в папке /local/components/ будет создана папка компонента.
 После этого на странице на сайте где необходимо вывести курс валют вставьте код:
-> [!IMPORTANT]
->  <?$APPLICATION->IncludeComponent(
-> 	"zadanie:currency.rates",
-> 	".default",
-> 	Array(
-> 		"COMPONENT_TEMPLATE" => ".default",
-> 		"DEFAULT_SORT_BY" => "NAME",
-> 		"DEFAULT_SORT_ORDER" => "ASC",
-> 		"ELEMENTS_PER_PAGE" => "20"
-> 	)
->  );?>
+\```
+<?$APPLICATION->IncludeComponent("zadanie:currency.rates",".default",
+ 	Array(
+ 		"COMPONENT_TEMPLATE" => ".default",
+ 		"DEFAULT_SORT_BY" => "NAME",
+ 		"DEFAULT_SORT_ORDER" => "ASC",
+ 		"ELEMENTS_PER_PAGE" => "20"
+ 	)
+  );?>
+\```
 
 После установки модуля будет создан агент по ежедневному курса валюты.
 Также будет доступен раздел с настройками модуля https://вашсайт.ru/bitrix/admin/settings.php?lang=ru&mid=zadanie.currency&mid_menu=1 ,  можно будет тут же время обновления курсов валют.
